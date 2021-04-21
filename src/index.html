@@ -12,17 +12,217 @@
     />
     <link rel="shortcut icon" href="./4geeks.ico" />
   </head>
+
   <body>
-    <div class="container-fluid text-center">
-      <h1 class="mt-5">Hello Rigo!</h1>
-      <img src="./rigo-baby.jpg" />
-      <p class="alert alert-warning mt-4">
-        If this text is <b>not</b> centered and <b>yellow</b>, you probably have
-        an error
-      </p>
-      <div class="fixed-bottom p-4">
-        Made with ❤️ by
-        <a href="https://www.4geeksacademy.com">4Geeks Academy</a>
+    <div class="container  border rounded mt-4 p-0">
+      <!--BARRA-->
+      <nav class="navbar navbar-light bg-light mb-4 border-bottom">
+        <span class="navbar-brand mb-0 h1">Payment form example</span>
+      </nav>
+      <div class="container">
+        <!--ALERT-->
+        <div class="row">
+          <div class="col">
+            <div
+              class="alert alert-danger col font-weight-bold"
+              role="alert"
+              id="alertError"
+            >
+              Some fields are missing
+            </div>
+          </div>
+        </div>
+        <!--FORM-->
+        <form id="form">
+          <!--ROW 1-->
+          <div class="row">
+            <div class="col-5">
+              <div class="form-group">
+                <label for="cardNumber">Card #</label>
+                <input
+                  type="number"
+                  minlength="16"
+                  maxlength="16"
+                  class="form-control"
+                  id="cardNumber"
+                  placeholder="XXXXXXXXXXXXXX"
+                />
+              </div>
+            </div>
+            <div class="col-3">
+              <div class="form-group">
+                <label for="cvcNumber">CVC#</label>
+                <input
+                  type="number"
+                  min="3"
+                  max="3"
+                  class="form-control"
+                  id="cvcNumber"
+                  placeholder="0000"
+                />
+              </div>
+            </div>
+            <div class="col-4">
+              <div class="form-group">
+                <div class="row ml-4">
+                  <label for="amount">Amount</label>
+                </div>
+                <div class="row">
+                  <div class="col-1">
+                    <p><strong>$</strong></p>
+                  </div>
+                  <div class="col">
+                    <input
+                      type="number"
+                      class="form-control"
+                      id="amount"
+                      placeholder="Amount"
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!--ROW 2-->
+          <div class="row">
+            <div class="col-6">
+              <div class="form-group">
+                <label for="firstName">First Name</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="firstName"
+                  placeholder=""
+                />
+              </div>
+            </div>
+            <div class="col-6">
+              <div class="form-group">
+                <label for="lastName">Last Name</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="lastName"
+                  placeholder=""
+                />
+              </div>
+            </div>
+          </div>
+          <!-- ROW 3 -->
+          <div class="row mb-2">
+            <div class="col-6">
+              <label for="city">City</label>
+              <input type="text" class="form-control" id="city" />
+              <div class="invalid-feedback">
+                Please provide a valid city.
+              </div>
+            </div>
+            <div class="col-3">
+              <label for="validationCustom04">State</label>
+              <select class="custom-select" id="validationCustom04">
+                <option selected disabled value="">Pick a state</option>
+                <option>...</option>
+              </select>
+              <div class="invalid-feedback">
+                Please select a valid state.
+              </div>
+            </div>
+            <div class="col-3">
+              <label for="postalCode">Postal Code</label>
+              <input type="number" class="form-control" id="postalCode" />
+              <div class="invalid-feedback">
+                Please provide a valid zip.
+              </div>
+            </div>
+          </div>
+
+          <!-- RAD -->
+          <div class="row">
+            <div class="col">
+              <div class="form-group">
+                <label for="validationCustom05">We accept:</label>
+                <div class="bg-secondary w-50 p-2 rounded">
+                  <div
+                    class="custom-control custom-radio custom-control-inline"
+                  >
+                    <input
+                      type="radio"
+                      id="customRadioInline1"
+                      name="customRadioInline1"
+                      class="custom-control-input cards"
+                    />
+                    <label class="custom-control-label" for="customRadioInline1"
+                      ><i class="fab fa-cc-mastercard text-white"></i
+                    ></label>
+                  </div>
+                  <div
+                    class="custom-control custom-radio custom-control-inline"
+                  >
+                    <input
+                      type="radio"
+                      id="customRadioInline2"
+                      name="customRadioInline1"
+                      class="custom-control-input cards "
+                    />
+                    <label class="custom-control-label" for="customRadioInline2"
+                      ><i class="fab fa-cc-visa text-white"></i
+                    ></label>
+                  </div>
+                  <div
+                    class="custom-control custom-radio custom-control-inline"
+                  >
+                    <input
+                      type="radio"
+                      id="customRadioInline3"
+                      name="customRadioInline1"
+                      class="custom-control-input cards"
+                    />
+                    <label class="custom-control-label" for="customRadioInline3"
+                      ><i class="fab fa-cc-diners-club text-white"></i
+                    ></label>
+                  </div>
+                  <div
+                    class="custom-control custom-radio custom-control-inline"
+                  >
+                    <input
+                      type="radio"
+                      id="customRadioInline4"
+                      name="customRadioInline1"
+                      class="custom-control-input cards"
+                    />
+                    <label class="custom-control-label" for="customRadioInline4"
+                      ><i class="fab fa-cc-amex text-white"></i
+                    ></label>
+                  </div>
+                  <div class="bg-light"></div>
+                </div>
+              </div>
+            </div>
+            <div class="col">
+              <div class="form-group">
+                <label for="textArea">Message</label>
+                <textarea
+                  class="form-control"
+                  id="textArea"
+                  rows="3"
+                ></textarea>
+                <small id="passwordHelpBlock" class="form-text text-muted">
+                  Add any notes here.
+                </small>
+              </div>
+            </div>
+          </div>
+          <nav
+            class="navbar navbar-light bg-light d-flex justify-content-end border-top"
+          >
+            <span class="navbar-brand mb-0 h1">
+              <button type="button" class="btn btn-secondary">Cancel</button>
+              <button type="submit" class="btn btn-primary" id="sendBtn">
+                Send
+              </button></span
+            >
+          </nav>
+        </form>
       </div>
     </div>
   </body>
