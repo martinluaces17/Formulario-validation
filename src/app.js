@@ -22,6 +22,7 @@ var cards = document.getElementById("cards");
 var textArea = document.getElementById("textArea");
 var sendBtn = document.getElementById("sendBtn");
 var completeCampo = document.getElementById("completeCampo");
+var alert = document.getElementById("alertError");
 
 form.addEventListener("submit", function(event) {
   event.preventDefault();
@@ -43,11 +44,15 @@ function validation() {
     cardMsg.style.display = "flex";
     cardMsg.innerHTML = "Por favor, complete este campo";
     cardNumber.style.backgroundColor = "#f8d7da";
+    alert.style.display = "block";
   } else if (cardNumberValue.length < 16) {
+    cardMsg.innerHTML = "El número de tarjeta debe contener 16 caracteres";
+  } else if (cardNumberValue.length > 16) {
     cardMsg.innerHTML = "El número de tarjeta debe contener 16 caracteres";
   } else {
     cardMsg.style.display = "none";
     cardNumber.style.background = "#fff";
+    alert.style.display = "none";
   }
 
   if (cvcValue.length == 0) {
