@@ -3,3 +3,16 @@
 #alertError {
   display: none;
 }
+
+#cardMsg,
+#cvcMsg,
+#amountMsg,
+#firstNameMsg,
+#lastNameMsg,
+#zipMsg,
+#cityMsg,
+#textMsg {
+  display: none;
+  font-weight: 600;
+  color: #9b2731;
+}

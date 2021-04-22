@@ -41,12 +41,11 @@
                 <label for="cardNumber">Card #</label>
                 <input
                   type="number"
-                  minlength="16"
-                  maxlength="16"
                   class="form-control"
                   id="cardNumber"
                   placeholder="XXXXXXXXXXXXXX"
                 />
+                <small id="cardMsg"></small>
               </div>
             </div>
             <div class="col-3">
@@ -54,12 +53,11 @@
                 <label for="cvcNumber">CVC#</label>
                 <input
                   type="number"
-                  min="3"
-                  max="3"
                   class="form-control"
                   id="cvcNumber"
                   placeholder="0000"
                 />
+                <small id="cvcMsg"></small>
               </div>
             </div>
             <div class="col-4">
@@ -78,6 +76,7 @@
                       id="amount"
                       placeholder="Amount"
                     />
+                    <small id="amountMsg"></small>
                   </div>
                 </div>
               </div>
@@ -94,6 +93,7 @@
                   id="firstName"
                   placeholder=""
                 />
+                <small id="firstNameMsg"></small>
               </div>
             </div>
             <div class="col-6">
@@ -105,6 +105,7 @@
                   id="lastName"
                   placeholder=""
                 />
+                <small id="lastNameMsg"></small>
               </div>
             </div>
           </div>
@@ -113,9 +114,7 @@
             <div class="col-6">
               <label for="city">City</label>
               <input type="text" class="form-control" id="city" />
-              <div class="invalid-feedback">
-                Please provide a valid city.
-              </div>
+              <small id="cityMsg"></small>
             </div>
             <div class="col-3">
               <label for="validationCustom04">State</label>
@@ -130,13 +129,14 @@
             <div class="col-3">
               <label for="postalCode">Postal Code</label>
               <input type="number" class="form-control" id="postalCode" />
+              <small id="zipMsg"></small>
               <div class="invalid-feedback">
                 Please provide a valid zip.
               </div>
             </div>
           </div>
 
-          <!-- RAD -->
+          <!-- ROW -->
           <div class="row">
             <div class="col">
               <div class="form-group">
@@ -195,6 +195,7 @@
                     ></label>
                   </div>
                   <div class="bg-light"></div>
+                  <small id="completeCampo"></small>
                 </div>
               </div>
             </div>
@@ -206,7 +207,7 @@
                   id="textArea"
                   rows="3"
                 ></textarea>
-                <small id="passwordHelpBlock" class="form-text text-muted">
+                <small id="textMsg" class="form-text">
                   Add any notes here.
                 </small>
               </div>

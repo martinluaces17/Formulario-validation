@@ -21,72 +21,97 @@ var postalCode = document.getElementById("postalCode");
 var cards = document.getElementById("cards");
 var textArea = document.getElementById("textArea");
 var sendBtn = document.getElementById("sendBtn");
-var alert = document.getElementById("alertError");
+var completeCampo = document.getElementById("completeCampo");
 
 form.addEventListener("submit", function(event) {
   event.preventDefault();
 
-  if (cardNumber.value.length == 0) {
-    alert.style.display = "block";
+  validation();
+});
+
+function validation() {
+  const cardNumberValue = cardNumber.value;
+  const cvcValue = cvcNumber.value;
+  const amountValue = amount.value;
+  const firstNameValue = firstName.value;
+  const lastNameValue = lastName.value;
+  const cityValue = city.value;
+  const postalCodeValue = postalCode.value;
+  const textAreaValue = textArea.value;
+
+  if (cardNumberValue.length == 0) {
+    cardMsg.style.display = "flex";
+    cardMsg.innerHTML = "Por favor, complete este campo";
     cardNumber.style.backgroundColor = "#f8d7da";
+  } else if (cardNumberValue.length < 16) {
+    cardMsg.innerHTML = "El número de tarjeta debe contener 16 caracteres";
   } else {
-    alert.style.display = "none";
-    cardNumber.style.backgroundColor = "#fff";
+    cardMsg.style.display = "none";
+    cardNumber.style.background = "#fff";
   }
 
-  if (cvcNumber.value.length == 0) {
-    alert.style.display = "block";
+  if (cvcValue.length == 0) {
+    cvcMsg.style.display = "flex";
+    cvcMsg.innerHTML = "Por favor, complete este campo";
     cvcNumber.style.backgroundColor = "#f8d7da";
+  } else if (cvcValue.length < 3) {
+    cvcMsg.innerHTML = "El número debe contener 3 o 4 caracteres";
   } else {
-    alert.style.display = "none";
-    cvcNumber.style.backgroundColor = "#fff";
+    cvcMsg.style.display = "none";
+    cvcNumber.style.background = "#fff";
   }
 
-  if (amount.value.length == 0) {
-    alert.style.display = "block";
+  if (amountValue == "") {
+    amountMsg.style.display = "flex";
+    amountMsg.innerHTML = "Por favor, complete este campo";
     amount.style.backgroundColor = "#f8d7da";
   } else {
-    alert.style.display = "none";
-    amount.style.backgroundColor = "#fff";
+    amountMsg.style.display = "none";
+    amount.style.background = "#fff";
   }
 
-  if (firstName.value.length == 0) {
-    alert.style.display = "block";
+  if (firstNameValue == "") {
+    firstNameMsg.style.display = "flex";
+    firstNameMsg.innerHTML = "Por favor, complete este campo";
     firstName.style.backgroundColor = "#f8d7da";
   } else {
-    alert.style.display = "none";
-    firstName.style.backgroundColor = "#fff";
+    firstNameMsg.style.display = "none";
+    firstName.style.background = "#fff";
   }
 
-  if (lastName.value.length == 0) {
-    alert.style.display = "block";
+  if (lastNameValue == "") {
+    lastNameMsg.style.display = "flex";
+    lastNameMsg.innerHTML = "Por favor, complete este campo";
     lastName.style.backgroundColor = "#f8d7da";
   } else {
-    alert.style.display = "none";
-    lastName.style.backgroundColor = "#fff";
+    lasttNameMsg.style.display = "none";
+    lastName.style.background = "#fff";
   }
 
-  if (city.value.length == 0) {
-    alert.style.display = "block";
+  if (cityValue == "") {
+    cityMsg.style.display = "flex";
+    cityMsg.innerHTML = "Por favor, complete este campo";
     city.style.backgroundColor = "#f8d7da";
   } else {
-    alert.style.display = "none";
-    city.style.backgroundColor = "#fff";
+    cityMsg.style.display = "none";
+    city.style.background = "#fff";
   }
 
-  if (postalCode.value.length == 0) {
-    alert.style.display = "block";
+  if (postalCodeValue == "") {
+    zipMsg.style.display = "flex";
+    zipMsg.innerHTML = "Por favor, complete este campo";
     postalCode.style.backgroundColor = "#f8d7da";
   } else {
-    alert.style.display = "none";
-    postalCode.style.backgroundColor = "#fff";
+    zipMsg.style.display = "none";
+    postalCode.style.background = "#fff";
   }
 
-  if (textArea.value.length == 0) {
-    alert.style.display = "block";
+  if (textAreaValue == "") {
+    textMsg.style.display = "flex";
+    textMsg.innerHTML = "Por favor, complete este campo";
     textArea.style.backgroundColor = "#f8d7da";
   } else {
-    alert.style.display = "none";
-    textArea.style.backgroundColor = "#fff";
+    textMsg.style.display = "none";
+    textArea.style.background = "#fff";
   }
-});
+}
