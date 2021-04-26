@@ -55,15 +55,18 @@ function validation() {
     alert.style.display = "none";
   }
 
-  if (cvcValue.length == 0) {
+  if (cvcNumber.length == 0) {
     cvcMsg.style.display = "flex";
     cvcMsg.innerHTML = "Por favor, complete este campo";
     cvcNumber.style.backgroundColor = "#f8d7da";
-  } else if (cvcValue.length < 3) {
-    cvcMsg.innerHTML = "El número debe contener 3 o 4 caracteres";
+  } else if (cvcNumber.length < 3) {
+    cvcMsg.innerHTML = "El número no debe contener menos de 3 caracteres";
+  } else if (cvcNumber.length > 4) {
+    cvcMsg.innerHTML = "El número no debe contener más de 4 caracteres";
   } else {
     cvcMsg.style.display = "none";
     cvcNumber.style.background = "#fff";
+    alert.style.display = "none";
   }
 
   if (amountValue == "") {
